@@ -1,6 +1,12 @@
-# easteregg
+# easteregg.js
 
-js-library providing js easter eggs even on Christmas
+js-library providing js easter eggs even at Christmas
+
+## whole year easter pages:
+
+ * [xy124.github.io][xy124.github.io]
+
+[xy124.github.io]:http://xy124.github.io/
 
 ## Getting Started
 

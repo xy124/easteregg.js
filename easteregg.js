@@ -25,6 +25,31 @@
     ].randomSelect();
   }
 
+  function letTextFly(text, style) {
+    var div = document.createElement('div'),
+        x   = innerWidth / 2,
+        y   = innerHeight / 2,
+        flyingTextInterval = setInterval(function(){
+          div.style.top = y + 'px';
+          y -= 8*Math.sin((new Date()).getMilliseconds()/1000*6) + 5;
+          if (y < -100) {
+            clearInterval(flyingTextInterval);
+            document.body.removeChild(div);
+          }
+        }, 40);
+
+    div.innerHTML = text;
+
+    for (var s in style) {
+      div.style.setProperty(s, style[s]);
+    }
+    document.body.appendChild(div);
+
+
+    div.style.left = x + 'px';
+
+  }
+
 ////////////////////////////////////////////////////////////////////////////////
 // insert eggs here!
   var eggs = [
@@ -54,6 +79,16 @@
         alert(randomPhrase());
       }
     },
+    {
+      id: 'pizza',
+      keystroke: 'p i z z a',
+      action: function() {
+        letTextFly('+1000 food', {'color': 'red',
+        'font-size':'24px', 'position': 'absolute',
+        'font-family': 'Arial, Sans-Serif',
+        'text-shadow': '#000000 3px 3px 5px'});
+      }
+    }
   ];
 
 
